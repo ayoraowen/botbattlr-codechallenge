@@ -19,6 +19,13 @@ function BotsPage({botData}) {//
 
   }
 
+  function removeArmyBot(e) {
+    const remainingBots = armyBot.filter((eachBot) => {
+      return eachBot.id!==Number(e.currentTarget.id)
+    })
+    setArmyBot(remainingBots)
+  }
+
   
 
   
@@ -27,7 +34,7 @@ function BotsPage({botData}) {//
 
   return (
     <div>
-      <YourBotArmy botData={armyBot} onBotArmyAdd={renderChosenBot}/>
+      <YourBotArmy botData={armyBot} onBotArmyAdd={renderChosenBot} removeArmyBot={removeArmyBot}/>
       <BotCollection botData={botData} onBotArmyAdd={renderChosenBot}/>
     </div>
   )

@@ -11,7 +11,8 @@ const botTypeClasses = {
 
 function BotCard({ bot, onBotArmyAdd }) {
 
-  function handleBotChosen() {
+  function handleBotChosen(e) {
+    console.log(e.target)
     onBotArmyAdd(bot)
   }
 
@@ -25,7 +26,7 @@ function BotCard({ bot, onBotArmyAdd }) {
       <div
         className="ui card"
         key={bot.id}
-        onClick={() => handleBotChosen()}//console.log("add code to connect event listener")
+        onClick={(e) => handleBotChosen(e)}//console.log("add code to connect event listener")
       >
         <div className="image">
           <img alt="oh no!" src={bot.avatar_url} />
